@@ -2,7 +2,7 @@
 ## get java from trusted build
 ## Based on neo4j docker from Tiago Pires, tiago-a-pires@ptinovacao.pt
 
-FROM dockerfile/java
+FROM dockerfile/java:openjdk-7-jdk
 MAINTAINER Hans Donner
 
 RUN wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add - ; \
@@ -15,5 +15,6 @@ RUN chmod +x /launch.sh
 
 VOLUME /var/lib/neo4j/data
 VOLUME /var/lib/neo4j/conf
+EXPOSE 7474
 
 CMD ["/bin/bash", "-c", "/launch.sh"]
