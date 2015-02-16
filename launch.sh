@@ -41,5 +41,4 @@ sed -i "s|#relationship_keys_indexable=name,age|relationship_keys_indexable=$NEO
 # update file limits
 ulimit -n 65536
 
-$NEO4J_HOME/bin/neo4j console
-
+exec $NEO4J_HOME/bin/neo4j console
