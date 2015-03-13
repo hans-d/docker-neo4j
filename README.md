@@ -9,6 +9,18 @@ With the Dockerfile on repository you've a docker neo4j community edition image 
 
 1. Execute this command:
 
-	`docker run -i -t -d -privileged -p 7474:7474 tpires/neo4j`
+	`docker run -i -t -d -privileged -p 7474:7474 hansd/neo4j`
 
 2. Access to http://localhost:7474 with your browser.
+
+
+### Versions/tags
+
+- latest: latest stable community edition
+- 2.1: latest stable community edition 2.1.x
+- 2.1.x: community edition 2.1.x
+
+- enterprise: latest stable enterprise edition (you need a license to run this)
+- enterprise-2.1: lastest stable enterprise edition 2.1.x
+- enterprise-2.1.x: enterprise edition 2.1.x
+
