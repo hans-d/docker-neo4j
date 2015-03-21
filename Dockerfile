@@ -1,9 +1,5 @@
-## Neo4J dependency: dockerfile/java
-## get java from trusted build
-## Based on neo4j docker from Tiago Pires, tiago-a-pires@ptinovacao.pt
-
-FROM dockerfile/java:openjdk-7-jdk
-MAINTAINER Hans Donner
+FROM java:openjdk-7-jdk
+MAINTAINER Hans Donner <hans.donner@pobox.com> http://github.com/hans-d
 
 ENV NEO4J_VERSION=2.1.7
 
