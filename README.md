@@ -17,8 +17,9 @@ With the Dockerfile on repository you've a docker neo4j community edition image 
 ### Versions/tags
 
 - latest: latest stable community edition
-- 2.1: latest stable community edition 2.1.x
-- 2.1.x: community edition 2.1.x
+- 2.x: latest stable community edition 2.x.y
+- 2.x.y: community edition 2.x.y
+
 
 - enterprise: latest stable enterprise edition (you need a license to run this)
 - enterprise-2.1: lastest stable enterprise edition 2.1.x

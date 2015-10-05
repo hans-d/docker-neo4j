@@ -1,7 +1,7 @@
 FROM java:openjdk-7-jdk
 MAINTAINER Hans Donner <hans.donner@pobox.com>
 
-ENV NEO4J_VERSION=2.1.7
+ENV NEO4J_VERSION=2.2.5
 
 RUN wget -O - http://debian.neo4j.org/neotechnology.gpg.key | apt-key add - ; \
     echo 'deb http://debian.neo4j.org/repo stable/' > /etc/apt/sources.list.d/neo4j.list ; \
