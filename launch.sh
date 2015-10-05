@@ -41,8 +41,5 @@ sed -i "s|#relationship_keys_indexable=name,age|relationship_keys_indexable=$NEO
 # update file limits
 ulimit -n 65536
 
-# run it, and shutdown neo4j when teh container is stopped
-trap "pkill -SIGTERM -f java; echo SIGTERMd java; exit" 15
-
-$NEO4J_HOME/bin/neo4j console &
+$NEO4J_HOME/bin/neo4j console
 wait
