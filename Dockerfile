@@ -1,4 +1,4 @@
-FROM java:openjdk-7-jdk
+FROM java:openjdk-8-jdk
 MAINTAINER Hans Donner <hans.donner@pobox.com>
 
 ENV NEO4J_VERSION=2.2.5
@@ -12,7 +12,6 @@ ADD launch.sh /
 RUN chmod +x /launch.sh
 
 VOLUME /var/lib/neo4j/data
-VOLUME /var/lib/neo4j/conf
 
 EXPOSE 7474
 EXPOSE 1337
