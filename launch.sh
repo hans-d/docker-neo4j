@@ -2,7 +2,7 @@
 
 NEO4J_HOME=/var/lib/neo4j
 
-LOCAL_IPADDR=$(ip a s | sed -ne '/127.0.0.1/!{s/^[ \t]*inet[ \t]*\([0-9.]\+\)\/.*$/\1/p}')
+LOCAL_IPADDR=0.0.0.0
 
 NEO4J_HOST=${NEO4J_HOST:-$LOCAL_IPADDR}
 NEO4J_SHELL_HOST=${NEO4J_SHELL_HOST:-$LOCAL_IPADDR}
@@ -41,5 +41,4 @@ sed -i "s|#relationship_keys_indexable=name,age|relationship_keys_indexable=$NEO
 # update file limits
 ulimit -n 65536
 
-$NEO4J_HOME/bin/neo4j console
-wait
+exec $NEO4J_HOME/bin/neo4j console
