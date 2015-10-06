@@ -30,13 +30,16 @@ cd /var/lib/neo4j/system/lib;  \
   rm -rf browser org
 
 # indexing settings
-sed -i "s|#node_auto_indexing=true|node_auto_indexing=$NEO4J_INDEX_NODE|g" /var/lib/neo4j/conf/neo4j.properties
-sed -i "s|#node_keys_indexable=name,age|node_keys_indexable=$NEO4J_INDEX_NODE_KEYS|g" /var/lib/neo4j/conf/neo4j.properties
-sed -i "s|#relationship_auto_indexing=true|relationship_auto_indexing=$NEO4J_INDEX_REL|g" /var/lib/neo4j/conf/neo4j.properties
-sed -i "s|#relationship_keys_indexable=name,age|relationship_keys_indexable=$NEO4J_INDEX_REL_KEYS|g" /var/lib/neo4j/conf/neo4j.properties
+sed -i "s|#node_auto_indexing=true|node_auto_indexing=$NEO4J_INDEX_NODE|g" $NEO4J_HOME/conf/neo4j.properties
+sed -i "s|#node_keys_indexable=name,age|node_keys_indexable=$NEO4J_INDEX_NODE_KEYS|g" $NEO4J_HOME/conf/neo4j.properties
+sed -i "s|#relationship_auto_indexing=true|relationship_auto_indexing=$NEO4J_INDEX_REL|g" $NEO4J_HOME/conf/neo4j.properties
+sed -i "s|#relationship_keys_indexable=name,age|relationship_keys_indexable=$NEO4J_INDEX_REL_KEYS|g" $NEO4J_HOME/conf/neo4j.properties
 
 #other
 #sed -i "s|#allow_store_upgrade=true|allow_store_upgrade=true|g" $NEO4J_HOME/conf/neo4j.properties
+
+# move rrd from volume
+sed -i "s|org.neo4j.server.webadmin.rrdb.location=.*|org.neo4j.server.webadmin.rrdb.location=/tmp/rrd|g" $NEO4J_HOME/conf/neo4j-server.properties
 
 # update file limits
 ulimit -n 65536
